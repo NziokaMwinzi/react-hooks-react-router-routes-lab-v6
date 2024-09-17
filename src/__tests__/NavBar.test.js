@@ -53,3 +53,5 @@ test("renders a Directors <NavLink>", async () => {
 
   expect(a.classList).toContain("active");
 });
+
+src/__tests__/NavBar.test.js

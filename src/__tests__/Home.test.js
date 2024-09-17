@@ -34,3 +34,5 @@ test("renders the <NavBar /> component", () => {
   );
   expect(document.querySelector(".navbar")).toBeInTheDocument();
 });
+
+src/__tests__/Home.test.js

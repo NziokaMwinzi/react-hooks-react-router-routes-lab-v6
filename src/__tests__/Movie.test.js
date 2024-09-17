@@ -52,3 +52,5 @@ test("renders the <NavBar /> component", async () => {
   );
   expect(await screen.findByRole("navigation")).toBeInTheDocument();
 });
+
+src/__tests__/Movie.test.js

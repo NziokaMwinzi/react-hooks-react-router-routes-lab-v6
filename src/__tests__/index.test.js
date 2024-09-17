@@ -53,3 +53,5 @@ test("renders an error page when given a bad URL", () =>{
   )
   expect(screen.getByText(/Oops! Looks like something went wrong./)).toBeInTheDocument()
 })
+
+src/__tests__/index.test.js
