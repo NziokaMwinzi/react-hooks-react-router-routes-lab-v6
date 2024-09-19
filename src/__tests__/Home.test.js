@@ -36,3 +36,4 @@ test("renders the <NavBar /> component", () => {
 });
 
 src/__tests__/Home.test.js
+

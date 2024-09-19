@@ -54,3 +54,4 @@ test("renders the <NavBar /> component", async () => {
 });
 
 src/__tests__/Movie.test.js
+

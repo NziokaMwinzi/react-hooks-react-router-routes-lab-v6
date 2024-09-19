@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import routes from './routes';import './index.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import routes from './routes';  // Import just the routes, not 'router'
+import './index.css';  // Assuming your CSS is in this file
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes);  // Define router
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
-);
+// Render the application
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<RouterProvider router={router} />);

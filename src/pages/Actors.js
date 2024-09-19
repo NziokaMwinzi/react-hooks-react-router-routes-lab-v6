@@ -1,26 +1,43 @@
-import React from 'react';
 
-const actors = [
-  { name: "Leonardo DiCaprio", movies: ["Inception", "Titanic", "The Revenant"] },
-  { name: "Matthew McConaughey", movies: ["Interstellar", "Dallas Buyers Club"] },
-];
+import { useEffect, useState } from 'react';
+import NavBar from "../components/NavBar";
 
 function Actors() {
+  const [actors, setActors] = useState([])
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/actors`)
+    .then(res => res.json())
+    .then(data => setActors(data))
+    .catch(error => console.error(error))
+  })
+
+  const actor = actors.map(actor => {
+    return (
+      <article key={actor.id}>
+        <h2>{actor.name}</h2>
+        <ul>{actor.movies.map(movie => <li key={movie}> </li>)}</ul>
+      </article>
+    )
+  })
+
   return (
-    <div>
+    <>
+    <header>
+      <NavBar/>
+    </header>
+    <main>
       <h1>Actors Page</h1>
-      {actors.map((actor, index) => (
-        <article key={index}>
-          <h2>{actor.name}</h2> 
-          <ul>
-            {actor.movies.map((movie, i) => (
-              <li key={i}>{movie}</li> 
-            ))}
-          </ul>
-        </article>
-      ))}
-    </div>
+      {actor}
+    </main>
+    </>
   );
-}
+
+};
+
+
+
+
+  
 
 export default Actors;
